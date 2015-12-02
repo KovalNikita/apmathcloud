@@ -5,7 +5,8 @@
 	int N = Convert.ToInt32((t_end-t_0)/h) + 1;//toInt
 	double [] T = new double [N];
 	double [] X = new double [N];
-	if(IsPost){
+	if(IsPost)
+	{
 		delegate void TestDelegate(double t,double X1,double X2);
 		
 		var num = Request["text1"];
