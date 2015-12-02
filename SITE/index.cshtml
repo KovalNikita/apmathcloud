@@ -1,22 +1,20 @@
 @{
+	double t_0 = 0;
+	double t_end = 100;
+	double h = 0.1;
+	int N = Convert.ToInt32((t_end-t_0)/h) + 1;//toInt
+	double [] T = new double [N];
+	double [] X = new double [N];
 	if(IsPost){
 		delegate void TestDelegate(double t,double X1,double X2);
 		
 		var num = Request["text1"];
-		double t_0 = 0;
-		double t_end = 100;
 		double z_0 = 0;
 		double z_d = num.AsInt();
-		double t1 = t_0;
-		double t2 = t_end;
-		double h = 0.1;
 		double k1 = 1;
 		double k2 = 1;
 		TestDelegate f1 = (t,X1,X2) =>{X2} 
 		TestDelegate f2 = (t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d}
-		int N = (t_end-t_0)/h + 1;//toInt
-		double [] T = new double [N];
-		double [] X = new double [N];
 		T[0] = t_0;
 		X_1 = 0;
 		X_2 = 0;
