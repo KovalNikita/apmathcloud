@@ -7,13 +7,13 @@
 	double [] X = new double [N];
 	if(IsPost)
 	{
-		delegate void TestDelegate(double t,double X1,double X2);
 		
 		var num = Request["text1"];
 		double z_0 = 0;
 		double z_d = num.AsInt();
 		double k1 = 1;
 		double k2 = 1;
+		delegate void TestDelegate(double t,double X1,double X2);
 		TestDelegate f1 = (t,X1,X2) =>{X2} 
 		TestDelegate f2 = (t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d}
 		T[0] = t_0;
