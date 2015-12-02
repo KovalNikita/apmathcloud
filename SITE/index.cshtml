@@ -19,6 +19,7 @@
 		T[0] = t_0;
 		X_1 = 0;
 		X_2 = 0;
+		String data = "";
 		for(int i = 0;i<N;++i)
 		{
 			T[i] = t_0 + h*i;
@@ -41,6 +42,8 @@
 			X_2 = currX_2;
 			
 			X[i] = X_1;
+			data += "[" +T[i]+"," + X[i]+"]";
+			if(i<N-1)data+=",";
 		}
 	}
 }
@@ -69,12 +72,7 @@
 	function drawChart() {
 		var data = google.visualization.arrayToDataTable([
 			['Year', 'Sales'],
-			@for (int i = 0;i<@N - 1;++i)
-			{
-				[@T[i],@X[i]],
-				
-			}
-			['@T[@N - 1]',@X[@N - 1]]
+			@data
 		]);
 
 		var options = {
