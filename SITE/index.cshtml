@@ -5,6 +5,7 @@
 	int N = Convert.ToInt32((t_end-t_0)/h) + 1;//toInt
 	double [] T = new double [N];
 	double [] X = new double [N];
+	String data = "";
 	if(IsPost)
 	{
 		
@@ -19,7 +20,6 @@
 		T[0] = t_0;
 		double X_1 = 0;
 		double X_2 = 0;
-		String data = "";
 		for(int i = 0;i<N;++i)
 		{
 			T[i] = t_0 + h*i;
