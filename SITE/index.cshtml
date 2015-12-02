@@ -55,22 +55,15 @@
 <head>
 	<meta charset="utf-8">
 	<title>MathBox Test</title>
-</head>
-<body>
-	<form action="" method="post">
-		<p><label for="text1">First Number:</label><br>
-			<input type="text" name="text1" /></p>
-		<p><input type="submit" value=" Add " /></p>
-	</form>
-
-	    <script type="text/javascript"
+		    <script type="text/javascript"
           src="https://www.google.com/jsapi?autoload={
             'modules':[{
               'name':'visualization',
               'version':'1',
               'packages':['corechart']
             }]
-          }"></script>
+          }">
+        </script>
 	<script type="text/javascript">
 	google.setOnLoadCallback(drawChart);
 
@@ -91,5 +84,12 @@
 		chart.draw(data, options);
 	}
     </script>
+</head>
+<body>
+	<form action="" method="post">
+		<p><label for="text1">First Number:</label><br>
+			<input type="text" name="text1" /></p>
+		<p><input type="submit" value=" Add " /></p>
+	</form>
 </body>
 </html>
