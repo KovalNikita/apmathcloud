@@ -23,16 +23,23 @@
 		{
 			T[i] = t_0 + h*i;
 			double t = T[i];
-			doubel k11 = ((t,X1,X2) =>{X2})(t,X_1,X_2);
-			doubel k12 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t,X_1,X_2);
-			doubel k21 = ((t,X1,X2) =>{X2})(t,X_1,X_2)(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
-			doubel k22 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
-			doubel k31 = f1(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
-			doubel k32 = f2(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
-			doubel k41 = f1(t+h	,X_1+h*k31	,X_2+h*k32);
-			doubel k42 = f2(t+h	,X_1+h*k31	,X_2+h*k32);
-			X_1 += h/6*(k11+2*k21+2*k31+k41);
-			X_2 += h/6*(k12+2*k22+2*k32+k42);
+			//doubel k11 = ((t,X1,X2) =>{X2})(t,X_1,X_2);
+			//doubel k12 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t,X_1,X_2);
+			//doubel k21 = ((t,X1,X2) =>{X2})(t,X_1,X_2)(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
+			//doubel k22 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
+			//doubel k31 = f1(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
+			//doubel k32 = f2(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
+			//doubel k41 = f1(t+h	,X_1+h*k31	,X_2+h*k32);
+			//doubel k42 = f2(t+h	,X_1+h*k31	,X_2+h*k32);
+			//X_1 += h/6*(k11+2*k21+2*k31+k41);
+			//X_2 += h/6*(k12+2*k22+2*k32+k42);
+			
+			double currX_1 = X_1 + h* X_2;
+			double currX_2 = X_2 + h*(-k1*X_1-k2*X_2+k1*z_d);
+			
+			X_1 = currX_1;
+			X_2 = currX_2;
+			
 			X[i] = X_1;
 		}
 	}
