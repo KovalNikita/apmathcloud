@@ -6,9 +6,10 @@
 	double [] T = new double [N];
 	double [] X = new double [N];
 	String data = "";
+	String chart = "";
 	if(IsPost)
 	{
-		
+		chart = "<div id=\"curve_chart\" style=\"width: 900px; height: 500px\"></div>";
 		var num = Request["text1"];
 		double z_0 = 0;
 		double z_d = num.AsInt();
@@ -92,6 +93,6 @@
 			<input type="text" name="text1" /></p>
 		<p><input type="submit" value=" Add " /></p>
 	</form>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    @chart
   </body>
 </html>
