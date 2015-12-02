@@ -1,6 +1,6 @@
 @{
 	double t_0 = 0;
-	double t_end = 10;
+	double t_end = 1;
 	double h = 0.1;
 	int N = Convert.ToInt32((t_end-t_0)/h) + 1;//toInt
 	double [] T = new double [N];
@@ -42,7 +42,7 @@
 			X_2 = currX_2;
 			
 			X[i] = X_1;
-			data += "[\\'" +T[i]+"\'," + X[i]+"]";
+			data += "[" +T[i]+"," + X[i]+"]";
 			if(i<N-1)
 			{
 				data+=",";
