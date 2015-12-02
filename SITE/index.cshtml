@@ -37,22 +37,11 @@
 			X[i] = X_1;
 		}
 	}
-
-
-var txt = DateTime.Now; //  C#
-
-
-
-	var amplitudeRequest = Request.Params["amplitude"];
-	var amplitudeValue = 1;
-	var clear = int.TryParse(amplitudeRequest, out amplitudeValue);
-	var errorMssage = "no amplitude provided, please input http://apmath4oj.azurewebsites.net/mem.cshtml?amplitude=5";
 }
 
 <html>
 <head>
 	<meta charset="utf-8">
-	<script src="./mathbox-bundle.min.js"></script>
 	<title>MathBox Test</title>
 </head>
 <body>
@@ -71,7 +60,7 @@ var txt = DateTime.Now; //  C#
 			['Year', 'Sales'],
 			@for (int i = 0;i<@N - 1;++i)
 			{
-				['@T[i]',@X[i]],
+				[@T[i],@X[i]],
 				
 			}
 			['@T[@N - 1]',@X[@N - 1]]
