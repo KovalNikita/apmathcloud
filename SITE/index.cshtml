@@ -13,9 +13,9 @@
 		double z_d = num.AsInt();
 		double k1 = 1;
 		double k2 = 1;
-		delegate void TestDelegate(double t,double X1,double X2);
-		TestDelegate f1 = (t,X1,X2) =>{X2} 
-		TestDelegate f2 = (t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d}
+		delegate double TestDelegate(double t,double X1,double X2);
+		//TestDelegate f1 = (t,X1,X2) =>{X2} 
+		//TestDelegate f2 = (t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d}
 		T[0] = t_0;
 		X_1 = 0;
 		X_2 = 0;
@@ -23,10 +23,10 @@
 		{
 			T[i] = t_0 + h*i;
 			double t = T[i];
-			doubel k11 = f1(t,X_1,X_2);
-			doubel k12 = f2(t,X_1,X_2);
-			doubel k21 = f1(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
-			doubel k22 = f2(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
+			doubel k11 = ((t,X1,X2) =>{X2})(t,X_1,X_2);
+			doubel k12 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t,X_1,X_2);
+			doubel k21 = ((t,X1,X2) =>{X2})(t,X_1,X_2)(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
+			doubel k22 = ((t,X1,X2) =>{-k1*X1-k2*X2+k1*z_d})(t+h/2	,X_1+h/2*k11	,X_2+h/2*k12);
 			doubel k31 = f1(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
 			doubel k32 = f2(t+h/2	,X_1+h/2*k21	,X_2+h/2*k22);
 			doubel k41 = f1(t+h	,X_1+h*k31	,X_2+h*k32);
