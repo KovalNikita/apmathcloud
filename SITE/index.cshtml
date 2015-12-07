@@ -73,8 +73,8 @@
         var data = google.visualization.arrayToDataTable([
           ['Time', 'Height'],
           @for(var i = 0; i < @N-1; ++i)
-    		{[@(T[i])]}
-    		[@(T[@N-1])]
+    		{[  @(T[i])  ]}
+    		[  @(T[@N-1])  ]
         ]);
 
         var options = {
