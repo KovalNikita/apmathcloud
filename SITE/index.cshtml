@@ -5,7 +5,9 @@
 	int N = Convert.ToInt32((t_end-t_0)/h) + 1;//toInt
 	double [] T = new double [N];
 	double [] X = new double [N];
-	String data = "";
+	String openBraket = "[";
+	String comma = ",";
+	String closeBraket = "[";
 	bool showChart = false;
 	if(IsPost)
 	{
@@ -75,12 +77,10 @@
           @for(var i = 0; i < @N-1; ++i)
     		{
 
-    		 <p>@(T[i]) 
-
-    		 @(X[i])</p>
+    		 @openBraket@(T[i]) @comma@(X[i])@closeBraket
 
     		}
-    		 @(T[@N-1]) 
+    		 @openBraket@(T[@N-1])@comma @(X[@N-1])@closeBraket
         ]);
 
         var options = {
