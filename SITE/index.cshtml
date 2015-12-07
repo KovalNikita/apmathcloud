@@ -72,8 +72,8 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Time', 'Height'],
-          @for(var i = 0; i < @N; i++)
-    		{<p>@(X[i])</p>}
+          @for(var i = 0; i < @N; ++i)
+    		{<p>@(T[i])</p>}
         ]);
 
         var options = {
